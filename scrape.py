@@ -8,4 +8,9 @@ session = requests.Session()
 payload = {'_username': config['username'],
            '_password': config['password']
            }
-s = session.get(config['site'], data=payload)
+s = session.post(config['site'], data=payload)
+
+# test
+site = config['site']
+test = session.get(f'{site}/circles/mindfulness')
+
