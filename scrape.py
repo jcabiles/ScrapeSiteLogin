@@ -12,5 +12,6 @@ s = session.post(config['site'], data=payload)
 
 # test
 site = config['site']
-test = session.get(f'{site}/circles/mindfulness')
-
+s = session.get(f'{site}/circles/mindfulness')
+soup = BeautifulSoup(s.text, 'html.parser')
+soup.find('img')['src']
