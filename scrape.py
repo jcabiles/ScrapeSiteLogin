@@ -7,4 +7,5 @@ config = yaml.safe_load(open('config.yml'))
 session = requests.Session()
 payload = {'_username': config['username'],
            '_password': config['password']
-}
+           }
+s = session.get(config['site'], data=payload)
