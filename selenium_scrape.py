@@ -35,3 +35,7 @@ post_title = driver.title
 post_date = driver.find_element_by_class_name("time-ago").text
 post_date = datetime.strptime(post_date, '%B %d, %Y')
 post_date = post_date.strftime('%Y-%m-%d')
+
+# download page
+with open(f"{post_date}_{post_title}.html", "w") as f:
+    f.write(driver.page_source)
