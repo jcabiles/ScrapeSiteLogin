@@ -37,5 +37,5 @@ post_date = datetime.strptime(post_date, '%B %d, %Y')
 post_date = post_date.strftime('%Y-%m-%d')
 
 # download page
-with open(f"{post_date}_{post_title}.html", "w") as f:
+with open(f"./Pages/{post_date}_{post_title}.html", "w") as f:
     f.write(driver.page_source)
