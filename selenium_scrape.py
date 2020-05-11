@@ -22,9 +22,9 @@ driver.find_element_by_name("pwd").send_keys(config['password'])
 driver.find_element_by_xpath(
     '//*[@id="login-modal"]/div/div/form/button').click()
 
-# navigate dropdown
+# navigate dropdown and click first entry
 driver.find_element_by_xpath(
     '//*[@id="masthead"]/div/div/div/div[2]/ul/li[5]/button').click()
 driver.find_element_by_xpath(
     '//*[@id="masthead"]/div/div/div/div[2]/ul/li[5]/ul/li[4]/a').click()
-
+driver.find_element_by_class_name("title-link").click()
