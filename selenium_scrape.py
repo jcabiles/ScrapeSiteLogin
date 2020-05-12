@@ -1,6 +1,7 @@
 from selenium import webdriver
 import yaml
 from datetime import datetime
+from pyvirtualdisplay import Display
 
 config = yaml.safe_load(open('config.yml'))
 
@@ -9,8 +10,7 @@ op = webdriver.ChromeOptions()
 op.add_argument('headless')
 
 # instantiate webdriver and find login button
-driver = webdriver.Chrome(#options=op
-     )
+driver = webdriver.Chrome(options=op)
 driver.get(config['site'])
 driver.find_element_by_xpath(
     '//*[@id="masthead"]/div/div/div/div/div[2]/ul/li/a[1]').click()
