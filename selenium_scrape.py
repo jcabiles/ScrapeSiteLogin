@@ -55,5 +55,6 @@ while True:
     except Exception as e:
         print(f"Except {e} for entry {post_title}")
         counter += 1
+        break
 
 
