@@ -41,7 +41,8 @@ with open(f"./Pages/{post_date}_{post_title}.html", "w") as f:
     f.write(driver.page_source)
 
 # loop through and save all other posts
-while True:
+counter = 0
+while counter < 20:
     try:
         element = driver.find_element_by_css_selector(
             'div[class="col-xs-6 text-left prev"]>a')
@@ -53,7 +54,9 @@ while True:
         with open(f"./Pages/{post_date}_{post_title}.html", "w") as f:
             f.write(driver.page_source)
         print(f"Successfully saved entry: {post_title}")
+        counter += 1
     except Exception as e:
         print(f"Except {e} for entry {post_title}")
+        counter += 1
 
 
