@@ -5,8 +5,8 @@ from datetime import datetime
 config = yaml.safe_load(open('config.yml'))
 
 # when ready, add lines to let selenium run w/o opening browser
-# op = webdriver.ChromeOptions()
-# op.add_argument('headless')
+op = webdriver.ChromeOptions()
+op.add_argument('headless')
 
 # instantiate webdriver and find login button
 driver = webdriver.Chrome(#options=op
