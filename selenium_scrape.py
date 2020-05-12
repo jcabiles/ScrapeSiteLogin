@@ -1,7 +1,5 @@
 from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
 import yaml
-import os
 from datetime import datetime
 
 config = yaml.safe_load(open('config.yml'))
