@@ -39,3 +39,21 @@ post_date = post_date.strftime('%Y-%m-%d')
 # download page
 with open(f"./Pages/{post_date}_{post_title}.html", "w") as f:
     f.write(driver.page_source)
+
+# loop through and save all other posts
+while True:
+    try:
+        element = driver.find_element_by_css_selector(
+            'div[class="col-xs-6 text-left prev"]>a')
+        element.click()
+        post_title = driver.title
+        post_date = driver.find_element_by_class_name("time-ago").text
+        post_date = datetime.strptime(post_date, '%B %d, %Y')
+        post_date = post_date.strftime('%Y-%m-%d')
+        with open(f"./Pages/{post_date}_{post_title}.html", "w") as f:
+            f.write(driver.page_source)
+        print(f"Successfully saved entry: {post_title}")
+    except Exception as e:
+        print(f"Except {e} for entry {post_title}")
+
+
